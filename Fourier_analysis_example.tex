@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{graphicx}%needs this for includesgraphics command
+\usepackage{amsmath}
+\usepackage{extarrows}
+\begin{document}
+\title{\LaTeX \ Practice paper, Fourier Analysis from Wikipedia}
+\author{Brandon Goodyear}
+\maketitle
+\tableofcontents
+
+\section{Definitions}
+Fourier analysis is the study of the way general functions may be represented or approximated by sums of simpler trigonometic functions. \\
+It is named after Joseph Fourier, who showed that representing a function as a sum of trigonometic funtions greatly simplifies the sudy of heat transfer. \\
+The process of decomposing a function into oscillatory components is often claled Fourier analysis, while the operation of rebuilding the fuction from these pieces is known as \textbf{Fourier synthesis}.
+The decomposition process itself is called a \textit{Fourier transformation}.
+
+\section{Variants of Fourier analysis}
+\subsection{general}
+\textbf{Fourier transform} refers to the transform of functions of a continous real argument. They produce a continous function of frequency, known as \textit{frequency distribution}. If a fucntion is tranformed, that transformed funciton can then be transformed back to the original. \\
+When the domain of the inital fucniton is $(t)$, and the domain of the output function is ordanary frequency, the transform of function $s(t)$ at frequency $f$ is given by the complex number:
+\begin{equation*}
+S(f)=\int_{-\infty}^{\infty}{s(t) \cdot e^{-i2\pi ft}}dt
+\end{equation*}
+Evaluating this quanity for all values of $f$ produces the \textit{frequency-domain} function. Then $s(t)$ can be represented as a recombination of complex exponentials of all possible frequencies:
+\begin{equation*}
+s(t)=\int_{-\infty}^{\infty}{S(f) \cdot e^{i2\pi ft}}df \text{,}
+\end{equation*}
+which is the inverse transform formula. The complex number, $S(f)$, convey both amplitude and phase of frequency $f$.
+
+\subsection{Fourier Series}
+The Fourier transform of a periodic function, $s_P(t)$, with period $P$, becomes a Diac comb function, modulated by a sequence of complex coefficeints:
+
+\begin{equation*}
+S[k]=\frac{1}{P}\int_{p}^{}{s_P(t) \cdot e^{-i2\pi \frac{k}{P}t}}dt
+\end{equation*}
+
+for all integer values of $k$, and where $\int_{P}$ is the integral over any interval of length $P$.\\
+The inverse transform, known as \textbf{Fourier series}, is a representation of $s_p(t)$ in terms of a summation of a potentially infinite number of harmonically related sinusoids or complex exponential functions, each with an amplitude and phase specified by one of the coeffients:
+
+\begin{equation*}
+s_p(t)=\sum_{k=-\infty}^{\infty}{S[k] \cdot e^{i2\pi \frac{k}{P}t}} 
+\xLongleftrightarrow[{}]{\text{$F$}}
+\sum_{k=-\infty}^{+\infty}{S[k]\delta \left(f-\frac{k}{P}\right)}
+\end{equation*}
+
+When $S_p(t)$,is expressed as a periodic summation of another function,s(t):
+
+\begin{equation*}
+s_P(t)\overset{\Delta}{=}\sum_{m=-\infty}^{\infty}s(t-mP)\text{,}
+\end{equation*}
+
+the coefficents are proportianal to samples of $S(f)$ at discrete intervals of $\frac{1}{P}$
+
+\begin{equation*}
+S[k]=\frac{1}{P}\cdot S\left(\frac{k}{P}\right)
+\end{equation*}
+
+A sufficient condition for recovering $s(t)$ (and therefore $S(f)$) from just these samples is that the non-zero portion of $s(t)$ be confined to a known interval of duration $P$, which is the frequency domain dual of Nyquist-Shannon sampling theroem. 
+
+\subsection{Discrete-time Fourier transform (DTFT)}
+
+\end{document}
+
+
+
