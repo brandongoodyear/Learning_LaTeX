@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{graphicx}%allows for including figs or images in Latex docs
+\usepackage{subfig}%subfigure environment
+\begin{document}
+\title{Making figures in \LaTeX}
+\author{Brandon Goodyear}
+\maketitle
+
+\begin{figure}[!htbp]%! overrides latex preferenes. h include fig here, t include fig at top of page, b fig at bottom of page, b for floating objects
+\begin{center}
+\subfloat[not rotated]{
+\label{fig:graph1}
+\includegraphics[width=0.4\textwidth]{test_image}
+}
+\quad
+
+\subfloat{
+\includegraphics[angle=45,width=0.4\textwidth]{test_image}
+}
+\quad
+\subfloat{
+\includegraphics[angle=180,width=0.4\textwidth]{test_image}
+}
+
+\caption{This is from google}
+\label{fig:graph}
+\end{center}
+\end{figure}
+I have incorporated a figure in my document. Please see figure\ \ref{fig:graph1}
+
+
+
+
+\end{document}
